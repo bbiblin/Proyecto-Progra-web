@@ -6,17 +6,92 @@
     <title>Pets & Items</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="bootstrap/js/bootstrap.bundle.js">
+    <link rel="stylesheet" href="custom/custom.css">
 </head>
 <body>
-    <nav class="navbar navbar-light bg-primary">
+    <nav class="navbar navbar-expand-sm">
         <div class="container-fluid">
-
-            <a href="#" class="navbar-brand mb-0 h1">
-                <img src="images/Pets & Items logo trasparent well-sized.png" height="30%" width="30%">
+            <a href="#" class="navbar-brand ps-0">
+                <img src="img/Pets & Items logo trasparent well-sized.png" height="100px" width="100px">
             </a>
+            <div class="collapse navbar-collapse ps-0">
+                <form class="d-flex ps-0">
+                    <input class="form-control" type="search">
+                    <div class="ps-3">
+                        <button id="botonbuscar" class="btn" type="submit">Buscar</button>
+                    </div>
+                </form>
+                <div class="ps-3">
+                    <button id="boton" class="btn" type="submit">Ropa</button>
+                </div>
+                <div class="ps-3">
+                    <button id="boton" class="btn" type="submit">Accesorios</button>
+                </div>
+            </div>
         </div>
-        
-        
     </nav>
+    
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col">
+                <h1 style="color: #ff914d;">Sobre nosotros</h1>
+                <p style="max-width: 600px;">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Consequatur sequi maiores culpa cumque modi, iusto mollitia dolorem accusamus, adipisci, 
+                    quasi ad? Ullam at, quisquam tempore quos ab non officiis harum?
+                </p>
+            </div>
+        
+            <div class="me-5 col">
+                <div class="float-end">
+                    <div id="carouselExample" class="carousel slide">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="img/articulo 1 arnes.jpg" style="height: 500px; width: 500px;" class="d-block w-100">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="img/snacks mascotas.jpg" style="height: 500px; width: 500px;" class="d-block w-100">
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid mt-4 mb-4">
+        <div class="row">
+            <div class="col">
+                <div id="carta" class="card" style="width: 18rem;">
+                    <img src="img/articulo 1 arnes.jpg" class="card-img-top; object-fit: contain;">
+                    <div class="card-body">
+                      <h5 class="card-title">Arnés XL</h5>
+                      <p class="card-text">Compra ahora tu producto preferido!</p>
+                      <a id="boton" href="#" class="btn">Visitar Producto</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div id="carta" class="card" style="width: 18rem;">
+                    <img src="img/snacks mascotas.jpg" class="card-img-top" style="height: 286px; object-fit: contain;">
+                    <div class="card-body">
+                      <h5 class="card-title">Snacks</h5>
+                      <p class="card-text">Compra ahora tu producto preferido!</p>
+                      <a id="boton" href="#" class="btn">Visitar Producto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
 </body>
 </html>
