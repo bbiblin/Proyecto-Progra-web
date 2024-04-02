@@ -93,85 +93,93 @@
             </div>
         </div>
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">¿Agregar al Carro?</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Quitar</button>
-                        <button type="button" class="btn btn-success">Agregar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="item">
+        <div class="item" style="width: 18rem;">
             <figure>
                 <img src="img/arnes-pequeño.png" alt="Cargando..." />
             </figure>
             <div class="info-producto">
                 <h2>Arnes pequeño</h2>
                 <p class="precio">$6.000</p>
-                <button id="boton" class="btn" type="submit">Añadir al carrito</button>
+                <a href="#"><button id="boton" class="btn mb-3" type="submit">Ver Detalles</button></a>
+                <button id="boton" class="btn" type="submit" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">Añadir al carrito</button>
             </div>
         </div>
 
 
-        <div class="item">
+        <div class="item" style="width: 18rem;">
             <figure>
                 <img src="img/camas.png" alt="Cargando..." />
             </figure>
             <div class="info-producto">
                 <h2>Camas mascota</h2>
                 <p class="precio">$13.990</p>
-                <button id="boton" class="btn" type="submit">Añadir al carrito</button>
+                <a href="#"><button id="boton" class="btn mb-3" type="submit">Ver Detalles</button></a>
+                <button id="boton" class="btn" type="submit" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">Añadir al carrito</button>
             </div>
         </div>
 
 
-        <div class="item">
+        <div class="item" style="width: 18rem;">
             <figure>
                 <img src="img/comedero-rosa.png" alt="Cargando..." />
             </figure>
             <div class="info-producto">
                 <h2>Comedero rosa</h2>
                 <p class="precio">$4.000</p>
-                <button id="boton" class="btn" type="submit">Ver Detalles</button>
-                <button id="boton" class="btn" type="submit">Añadir al carrito</button>
+                <a href="#"><button id="boton" class="btn mb-3" type="submit">Ver Detalles</button></a>
+                <button id="boton" class="btn" type="submit" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">Añadir al carrito</button>
             </div>
         </div>
 
 
-        <div class="item">
+        <div class="item" style="width: 18rem;">
             <figure>
                 <img src="img/jardinera-perro.png" alt="Cargando..." />
             </figure>
             <div class="info-producto">
                 <h2>Jardinera perro</h2>
                 <p class="precio">$7.990</p>
-                <button id="boton" class="btn" type="submit">Añadir al carrito</button>
+                <a href="#"><button id="boton" class="btn mb-3" type="submit">Ver Detalles</button></a>
+                <button id="boton" class="btn" type="submit" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">Añadir al carrito</button>
             </div>
         </div>
 
 
-        <div class="item">
+        <div class="item" style="width: 18rem;">
             <figure>
                 <img src="img/rascador-gato.png" alt="Cargando..." />
             </figure>
             <div class="info-producto">
                 <h2>Rascador gato</h2>
                 <p class="precio">$4.500</p>
-                <button id="boton" class="btn" type="submit">Añadir al carrito</button>
+                <a href="#"><button id="boton" class="btn mb-3" type="submit">Ver Detalles</button></a>
+                <button id="boton" class="btn" type="submit" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">Añadir al carrito</button>
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">¿Agregar al Carro?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Quitar</button>
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Agregar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
-
-
 </html>
