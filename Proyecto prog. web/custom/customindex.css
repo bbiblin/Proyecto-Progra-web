@@ -1,3 +1,7 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 body{
     background: linear-gradient(90deg,#ffe9b8,#ffe8d6);
 }
@@ -40,4 +44,10 @@ body{
 .carousel-item{
     object-fit: cover;
 }
+
+.sobre-nosotros{
+    color: #B45F2B;
+    font-weight: 500;
+}
+
 
