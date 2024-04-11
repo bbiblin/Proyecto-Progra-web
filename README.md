@@ -1,3 +1,8 @@
 # Proyecto-Progra-web
-Grupo 13
-Tema aun no escogido
+Grupo 6 Carlos Espinoza, Pablo Hernandez y Belen Diaz
+Tienda de articulos para mascotas
+-Vista de inicio
+-Vista de catalogo
+-Vista de ubicacion
+-Vista de contacto
+-Vista detalle de producto
