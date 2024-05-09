@@ -19,8 +19,8 @@
 }
 
 .item{
-    border-radius: 10px;
-    background-color: #FFC4A0;
+    border-radius: 5px;
+    background-color: #ffbd59;
 }
 
 .item:hover{
