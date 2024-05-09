@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 *{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 body{
@@ -11,12 +13,15 @@ body{
     outline-width: 1px;
     outline-color: #f87828;
     background-color: #ff914d;
+    color: white;
 }
 
 #botonbuscar{
     outline: solid;
     outline-width: 1px;
     background-color: #ffbd59;
+    color: white;
+    outline-color: #f87828 ;
 }
 
 #carta{
@@ -47,7 +52,13 @@ body{
 
 .sobre-nosotros{
     color: #B45F2B;
-    font-weight: 500;
+    font-weight: 600;
+    font-style: normal;
+
 }
 
+.titulo1{
+    font-weight: 700;
+    font-style: normal;
+}
 

@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pets & Items</title>
-    <link rel="stylesheet" href="custom/customindex.css">
-    <link rel="stylesheet" href="custom/customcontacto.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Registro o inicio de sesion</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <script defer src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="custom/custom-registro-inicio.css">
+    <link rel="stylesheet" href="custom/customindex.css">
+    
+
+    
 </head>
 <body>
     <nav class="navbar navbar-expand-xl fixed-top" style="background: linear-gradient(90deg,#ffe9b8,#ffe8d6);">
@@ -39,17 +42,20 @@
                     </div>
                     <div class="ms-0 mt-3 mb-3">
                         <li class="nav-item">
-                            <a href="catalogo.html"><button id="boton" class="btn ms-3" type="submit">Catálogo</button></a>
+                            <a href="catalogo.html"><button id="boton" class="btn ms-3"
+                                    type="submit">Catálogo</button></a>
                         </li>
                     </div>
                     <div class="ms-0 mt-3 mb-3">
                         <li class="nav-item">
-                            <a href="ubicacion.html"><button id="boton" class="btn ms-3" type="submit">Ubicación</button></a>
+                            <a href="ubicacion.html"><button id="boton" class="btn ms-3"
+                                    type="submit">Ubicación</button></a>
                         </li>
                     </div>
                     <div class="ms-0 mt-3 mb-3">
                         <li class="nav-item">
-                            <a href="#"><button id="boton" class="btn ms-3" type="submit">Contacto</button></a>
+                            <a href="contacto.html"><button id="boton" class="btn ms-3"
+                                    type="submit">Contacto</button></a>
                         </li>
                     </div>
                     <div class="ms-0 mt-3 mb-3">
@@ -68,56 +74,63 @@
             </div>
         </div>
     </nav>
-    <div style="margin-top: 150px;"></div>
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-6">
-            <div class="contact-form">
-              <h2>Contacto</h2>
-              <form>
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Nombre" required>
-                </div>
-                <div class="form-group">
-                  <input type="email" class="form-control" placeholder="Correo electrónico" required>
-                </div>
-                <div class="form-group">
-                  <textarea class="form-control" rows="5" placeholder="Mensaje" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary btn-block">Enviar mensaje</button>
-              </form>
+
+    <div class="container-form register">
+        <div class="information">
+            <div class="info-childs">
+                <h2>Bienvenido/a</h2>
+                <p>Mantente al tanto de las novedades de nuestra tienda</p>
+                <input type="button" value="Iniciar sesión" id="iniciosesion">
             </div>
-          </div>
         </div>
-        <div class="row justify-content-center contact-info">
-          <div class="col-md-6 text-center">
-            <p><i class="fas fa-map-marker-alt"></i> Dirección: Antonio Varas #666, Providencia</p>
-            <p><i class="fas fa-phone"></i> Teléfono: +1234567890</p>
-            <p><i class="fas fa-envelope"></i> Correo electrónico: info@example.com</p>
-          </div>
-        </div>
-      </div>
-      <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    </body>
-    </html>
+        <div class="form-information">
+            <div class="form-information-childs">
+                <h2>Crear una cuenta</h2>
+                <form class="form">
+                    <label>
+                        <i class='bx bx-user'></i>
+                        <input type="text" placeholder="Nombre y apellido">
+                    </label>
+                    <label>
+                        <i class='bx bx-envelope' ></i>
+                        <input type="email" placeholder="Correo electronico">
+                    </label>
+                    <label>
+                        <i class='bx bx-lock-alt' ></i>
+                        <input type="password" placeholder="Contraseña">
+                    </label>
+                    <input type="submit" value="Registrarse">
+                </form>
             </div>
         </div>
     </div>
 
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Carro de compras</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <div>
-                <ol>
-                    <li>Producto 1</li>
-                    <li>Producto 2</li>
-                    <li>Producto 3</li>
-                </ol>
+<!--registro-->
+
+    <div class="container-form login hide" >
+        <div class="information">
+            <div class="info-childs">
+                <h2>Bienvenido/a nuevamente</h2>
+                <p>Inicia sesion con tu cuenta, si no tienes una, registrate</p>
+                <input type="button" value="Registrarse" id="registro">
             </div>
         </div>
-    </div>
+        <div class="form-information">
+            <div class="form-information-childs">
+                <h2>Iniciar sesión</h2>
+                <form class="form">
+                    <label>
+                        <i class='bx bx-envelope' ></i>
+                        <input type="email" placeholder="Correo electronico">
+                    </label>
+                    <label>
+                        <i class='bx bx-lock-alt' ></i>
+                        <input type="password" placeholder="Contraseña">
+                    </label>
+                    <input type="submit" value="Iniciar sesión">
+                </form>
+            </div>
+        </div>
+<script src="script-registro-inicio.js"></script>
 </body>
 </html>
