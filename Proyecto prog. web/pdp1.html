@@ -9,7 +9,8 @@
     <script defer src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="custom/customindex.css">
     <link rel="stylesheet" href="custom/custompdp.css">
-    <script src="jquery-3.7.1.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery.zoom.js"></script>
 </head>
 
 <body>
@@ -86,7 +87,9 @@
     <div class="container mb-5">
         <div class="row">
             <div class="col-md-6">
+                <div class="img-magnifier-container">
                 <img class="img-fluid" src="img/articulo 1 arnes.jpg" alt="">
+            </div>
             </div>
             <div class="col-md-6 d-flex flex-column justify-content-between">
                 <div>
@@ -126,6 +129,10 @@
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function(){
+            $('.img-magnifier-container').zoom();
+        });
+    </script>
 </body>
-
 </html>
