@@ -135,6 +135,32 @@ body{
     box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
 }
 
+
+/*botones*/
+.botones{
+    padding-top: 20px;
+    justify-content: center;
+}
+.btn-l{
+    border: 20px;
+    background-color: #ffb383 !important;
+    outline: none !important;
+    outline-width: 1px;
+    outline-color: #f87828 !important;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 10px;
+    transition: background-color .3s ease;
+    
+}
+
+.btn-l:hover{
+    background-color: #f87828;
+    border: none;
+    color: grey;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+}
+
 .hide{
     position: absolute;
     transform: translateY(-1200px);
