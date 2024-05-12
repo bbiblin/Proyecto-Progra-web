@@ -103,10 +103,9 @@
                     <input onclick="validarCrearCuenta()" type="submit" value="Registrarse">
                     
                     <!--TODO: BOTONES DE VALIDACION, MODIFICAR LUGAR, ASPECTO, ETC.-->
-                    <div class="form-group mx-auto">
-                        <input type="submit" value="Ingresar" class="btn btn-outline-primary" onclick="validarCrearCuenta()">
-                        <input type="reset" value="Limpiar" class="btn btn-outline-warning">
-                        <button type="button" onclick="validarCrearCuenta()" class="btn btn-outline-success">Validar</button>
+                    <div class="form-group mx-auto botones">
+                        <input type="reset" value="Limpiar" class="btn btn-outline-warning btn-l">
+                        <button type="button" onclick="validarCrearCuenta()" class="btn btn-outline-warning btn-l">Validar</button>
                     </div>
                 </form>
 
@@ -116,7 +115,7 @@
         </div>
     </div>
 
-<!--registro-->
+<!--login-->
 
     <div class="container-form login hide" >
         <div class="information">
@@ -132,13 +131,19 @@
                 <form class="form">
                     <label>
                         <i class='bx bx-envelope' ></i>
-                        <input type="email" placeholder="Correo electronico">
+                        <input id="emailInicioSesion" type="email" placeholder="Correo electronico">
                     </label>
                     <label>
                         <i class='bx bx-lock-alt' ></i>
-                        <input type="password" placeholder="Contraseña">
+                        <input id="passInicioSesion" type="password" placeholder="Contraseña">
                     </label>
                     <input type="submit" value="Iniciar sesión">
+
+                    <div class="form-group mx-auto botones">
+                        <input type="reset" value="Limpiar" class="btn btn-outline-warning btn-l">
+                        <button type="button" onclick="validarInicioSesion()" class="btn btn-outline-warning btn-l">Validar</button>
+                    </div>
+                    <div id="resultadoInicio"></div>
                 </form>
             </div>
         </div>
