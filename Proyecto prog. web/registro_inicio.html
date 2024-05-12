@@ -89,18 +89,29 @@
                 <form class="form">
                     <label>
                         <i class='bx bx-user'></i>
-                        <input type="text" placeholder="Nombre y apellido">
+                        <input id="username" type="text" placeholder="Nombre y apellido">
                     </label>
                     <label>
                         <i class='bx bx-envelope' ></i>
-                        <input type="email" placeholder="Correo electronico">
+                        <input id="email" type="email" placeholder="Correo electronico">
                     </label>
                     <label>
                         <i class='bx bx-lock-alt' ></i>
-                        <input type="password" placeholder="Contraseña">
+                        <!--<input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>-->
+                        <input id="pass" type="password" placeholder="Contraseña">
                     </label>
-                    <input type="submit" value="Registrarse">
+                    <input onclick="validarCrearCuenta()" type="submit" value="Registrarse">
+                    
+                    <!--TODO: BOTONES DE VALIDACION, MODIFICAR LUGAR, ASPECTO, ETC.-->
+                    <div class="form-group mx-auto">
+                        <input type="submit" value="Ingresar" class="btn btn-outline-primary" onclick="validarCrearCuenta()">
+                        <input type="reset" value="Limpiar" class="btn btn-outline-warning">
+                        <button type="button" onclick="validarCrearCuenta()" class="btn btn-outline-success">Validar</button>
+                    </div>
                 </form>
+
+                <div id="resultado">
+                </div>
             </div>
         </div>
     </div>
@@ -131,6 +142,7 @@
                 </form>
             </div>
         </div>
-<script src="script-registro-inicio.js"></script>
+<script src="js/script-registro-inicio.js"></script>
+<script src="js/validaciones.js"></script>
 </body>
 </html>
