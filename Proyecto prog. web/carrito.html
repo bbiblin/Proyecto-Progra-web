@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pets & Items</title>
+    <title>Carrito de compras</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <script defer src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="custom/customcarrito.css">
     <link rel="stylesheet" href="custom/customindex.css">
-    <link rel="stylesheet" href="custom/custom-ubi.css">
-    <script src="js/jquery-3.7.1.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <body>
-
     <nav class="navbar navbar-expand-xl fixed-top" style="background: linear-gradient(90deg,#ffe9b8,#ffe8d6);">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
@@ -42,12 +40,14 @@
                     </div>
                     <div class="ms-0 mt-3 mb-3">
                         <li class="nav-item">
-                            <a href="catalogo.html"><button id="boton" class="btn ms-3" type="submit">Catálogo</button></a>
+                            <a href="catalogo.html"><button id="boton" class="btn ms-3"
+                                    type="submit">Catálogo</button></a>
                         </li>
                     </div>
                     <div class="ms-0 mt-3 mb-3">
                         <li class="nav-item">
-                            <a href="ubicacion.html"><button id="boton" class="btn ms-3" type="submit">Ubicación</button></a>
+                            <a href="ubicacion.html"><button id="boton" class="btn ms-3"
+                                    type="submit">Ubicación</button></a>
                         </li>
                     </div>
                     <div class="ms-0 mt-3 mb-3">
@@ -71,36 +71,64 @@
             </div>
         </div>
     </nav>
-
-
-    <div class="container">
-        <h2> Estamos ubicados en Antonio Varas #666, Providencia</h2>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.6255333660197!2d-70.61748468915455!3d-33.43300587328534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf7b8af466fd%3A0xc8fd2d768e783103!2sDuoc%20UC%3A%20Antonio%20Varas!5e0!3m2!1ses-419!2scl!4v1711921354860!5m2!1ses-419!2scl" 
-        width="600" height="450"
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-        
-    </div>
-
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Carro de compras</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+</body>
+<div class="container">
+    <h1 class="text-center">Carrito de Compras</h1>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="cart-header">
+                <h4>Productos en tu carrito</h4>
+            </div>
+            <div class="cart-item">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="img/arnes-pequeño.png" alt="Producto 1" class="img-fluid">
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Arnés pequeño</h5>
+                        <p>Para gatos o perros raza pequeña</p>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="number" class="form-control" value="1">
+                    </div>
+                    <div class="col-md-2">
+                        <h5>$6.000</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="img/jardinera-perro.png" alt="Producto 2" class="img-fluid">
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Jardinera de perro</h5>
+                        <p>Jardinera perro raza pequeña</p>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="number" class="form-control" value="2">
+                    </div>
+                    <div class="col-md-2">
+                        <h5>$7.990</h5>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="offcanvas-body">
-            <div>
-                <ol>
-                    <li>Producto 1</li>
-                    <li>Producto 2</li>
-                    <li>Producto 3</li>
-                </ol>
+        <div class="col-md-4">
+            <div class="cart-summary">
+                <h4>Resumen del Carrito</h4>
+                <p>Subtotal: $13.990</p>
+                <p>Envío: $2.990</p>
+                <h5>Total: $16.980</h5>
+                <button class="btn btn-success btn-pago">Proceder al Pago</button>
             </div>
         </div>
     </div>
+</div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+</html>
 
 </html>

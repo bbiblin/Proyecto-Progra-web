@@ -50,7 +50,7 @@ function validarCrearCuenta() {
     } else {
         document.getElementById("username").style.border = "1px solid red";
         document.getElementById("pass").style.border = "1px solid red";
-        document.getElementById("resultado").innerHTML = "<div class='alert alert-danger w-10 mx-auto text-center'>" +
+        document.getElementById("resultado").innerHTML = "<div class='alert alert-danger w-20 mx-auto text-center'>" +
             "El nombre de usuario debe tener entre 5 y 20 caracteres</div>";
     }
     
