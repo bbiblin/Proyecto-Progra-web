@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de compras</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script defer src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="custom/customcarrito.css">
+    <link rel="stylesheet" href="custom/customindex.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-xl fixed-top" style="background: linear-gradient(90deg,#ffe9b8,#ffe8d6);">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="img/Pets & Items logo trasparent well-sized.png" height="100px" width="100px">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+                    <div class="ms-0 mt-3 mb-3">
+                        <li class="nav-item">
+                            <form class="d-flex ps-0">
+                                <input class="form-control" type="search">
+                                <div class="ps-3">
+                                    <button id="botonbuscar" class="btn" type="submit">Buscar</button>
+                                </div>
+                            </form>
+                        </li>
+                    </div>
+                    <div class="ms-0 mt-3 mb-3">
+                        <li class="nav-item">
+                            <a href="index.html"><button id="boton" class="btn ms-3" type="submit">Inicio</button></a>
+                        </li>
+                    </div>
+                    <div class="ms-0 mt-3 mb-3">
+                        <li class="nav-item">
+                            <a href="catalogo.html"><button id="boton" class="btn ms-3"
+                                    type="submit">Catálogo</button></a>
+                        </li>
+                    </div>
+                    <div class="ms-0 mt-3 mb-3">
+                        <li class="nav-item">
+                            <a href="ubicacion.html"><button id="boton" class="btn ms-3"
+                                    type="submit">Ubicación</button></a>
+                        </li>
+                    </div>
+                    <div class="ms-0 mt-3 mb-3">
+                        <li class="nav-item">
+                            <a href="contacto.html"><button id="boton" class="btn ms-3" type="submit">Contacto</button></a>
+                        </li>
+                    </div>
+                    <div class="ms-0 mt-3 mb-3">
+                        <li>
+                            <a href="registro_inicio.html" class="btn ms-3" style="color: #ff914d;">
+                                Iniciar Sesión o registrarse
+                            </a>
+                        </li>
+                    </div>
+                    <div class="ms-1 me-1 mt-3 mb-3">
+                        <a style="margin: 25px;" href="carrito.html" role="button">
+                            <img src="img/cart-icon.png" height="30px" width="30px" alt="Cart Icon">
+                        </a>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</body>
+<div class="container">
+    <h1 class="text-center">Carrito de Compras</h1>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="cart-header">
+                <h4>Productos en tu carrito</h4>
+            </div>
+            <div class="cart-item">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="img/arnes-pequeño.png" alt="Producto 1" class="img-fluid">
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Arnés pequeño</h5>
+                        <p>Para gatos o perros raza pequeña</p>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="number" class="form-control" value="1">
+                    </div>
+                    <div class="col-md-2">
+                        <h5>$6.000</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="img/jardinera-perro.png" alt="Producto 2" class="img-fluid">
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Jardinera de perro</h5>
+                        <p>Jardinera perro raza pequeña</p>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="number" class="form-control" value="2">
+                    </div>
+                    <div class="col-md-2">
+                        <h5>$7.990</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="cart-summary">
+                <h4>Resumen del Carrito</h4>
+                <p>Subtotal: $13.990</p>
+                <p>Envío: $2.990</p>
+                <h5>Total: $16.980</h5>
+                <button class="btn btn-success btn-pago">Proceder al Pago</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pets & Items</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script defer src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="custom/customindex.css">
+    <link rel="stylesheet" href="custom/customcarrito.css">
+    <script src="js/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-xl fixed-top" style="background: linear-gradient(90deg,#ffe9b8,#ffe8d6);">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="img/Pets & Items logo trasparent well-sized.png" height="100px" width="100px">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+                    <div class="ms-0 mt-3 mb-3">
+                        <li class="nav-item">
+                            <form class="d-flex ps-0">
+                                <input class="form-control" type="search">
+                                <div class="ps-3">
+                                    <button id="botonbuscar" class="btn" type="submit">Buscar</button>
+                                </div>
+                            </form>
+                        </li>
+                    </div>
+                    <div class="ms-0 mt-3 mb-3">
+                        <li class="nav-item">
+                            <a href="index.html"><button id="boton" class="btn ms-3" type="submit">Inicio</button></a>
+                        </li>
+                    </div>
+                    <div class="ms-0 mt-3 mb-3">
+                        <li class="nav-item">
+                            <a href="catalogo.html"><button id="boton" class="btn ms-3"
+                                    type="submit">Catálogo</button></a>
+                        </li>
+                    </div>
+                    <div class="ms-0 mt-3 mb-3">
+                        <li class="nav-item">
+                            <a href="ubicacion.html"><button id="boton" class="btn ms-3"
+                                    type="submit">Ubicación</button></a>
+                        </li>
+                    </div>
+                    <div class="ms-0 mt-3 mb-3">
+                        <li class="nav-item">
+                            <a href="contacto.html"><button id="boton" class="btn ms-3"
+                                    type="submit">Contacto</button></a>
+                        </li>
+                    </div>
+                    <div class="ms-0 mt-3 mb-3">
+                        <li>
+                            <a href="registro_inicio.html" class="btn ms-3" style="color: #ff914d;">
+                                Iniciar Sesión o registrarse
+                            </a>
+                        </li>
+                    </div>
+                    <div class="ms-1 me-1 mt-3 mb-3">
+                        <a style="margin: 25px;" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                            <img src="img/cart-icon.png" height="30px" width="30px">
+                        </a>
+                    </div>
+                </ul>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div style="margin-top: 150px;"></div>
+
+    <div class="container mt-3 mb-3">
+        <div class="row">
+            <div class="col-lg-6">
+                <h1 class="titulo1" style="color: #ff914d; text-align: center;">Sobre nosotros</h1>
+                <p class="sobre-nosotros" style=" max-width: 600px; text-align: justify;">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum porro expedita sequi inventore eum
+                    veniam ullam pariatur facilis ducimus, est quibusdam accusamus consequatur dolores facere ex hic
+                    voluptatibus velit dicta!
+                    Quasi doloremque ipsum harum et neque eos eaque necessitatibus vel quibusdam quam, quos maxime non
+                    assumenda, officia voluptas! Nemo laborum praesentium tenetur dignissimos deserunt sequi, iure
+                    corrupti delectus ex expedita!
+                    Necessitatibus alias nihil suscipit rerum, provident, dolore consectetur amet et ea eos dolor
+                    repellendus perspiciatis error molestiae odio, incidunt unde dolorem nobis sint assumenda
+                    perferendis quae libero omnis cupiditate? Illum.
+                </p>
+            </div>
+
+            <div class="col-lg-6">
+                <div id="carouselExample" class="carousel slide">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="img/jardinera-perro.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/comedero-rosa.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/arnes-pequeño.png" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="prev" style="color: black;">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-3 mb-3">
+        <div class="row">
+            <div class="col-lg-4">
+                <div id="carta" class="card" style="width: 18rem;">
+                    <img src="img/articulo 1 arnes.jpg" class="card-img-top; object-fit: contain;">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #c78250;">Explora nuestro catálogo</h5>
+                        <br>
+                        <a id="boton" href="catalogo.html" class="btn" style="color: white;">Click Aqui!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div id="carta" class="card" style="width: 18rem;">
+                    <img src="img/imagen-ubicacion.png" class="card-img-top"
+                        style="height: 286px; object-fit: contain;">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #c78250;">Visitanos!</h5>
+                        <br>
+                        <a id="boton" href="ubicacion.html" class="btn" style="color: white;">Click Aqui!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div id="carta" class="card" style="width: 18rem;">
+                    <img src="img/Icono-Contacto.png" class="card-img-top" style="height: 286px; object-fit: contain;">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #c78250;">¿Tienes alguna duda?</h5>
+                        <h5 class="card-title" style="color: #c78250;">Escribenos</h5>
+                        <a id="boton" href="contacto.html" class="btn" style="color: white;">Click Aqui!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Carrito de compra -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Carro de compras</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="cart-items">
+                <div class="cart-item border rounded p-2 mb-2">
+                    <div class="d-flex align-items-center">
+                        <img src="img/articulo 1 arnes.jpg" alt="Arnes grande" class="cart-item-img" width="50" height="50">
+                        <div class="cart-item-details ms-2">
+                            <h6 class="cart-item-title mb-1">Arnes grande</h6>
+                            <p class="cart-item-price mb-1">$10.000 CLP</p>
+                            <div class="cart-item-quantity">
+                                <button class="btn btn-sm btn-outline-secondary">-</button>
+                                <span class="quantity"> 1 </span>
+                                <button class="btn btn-sm btn-outline-secondary">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-item border rounded p-2 mb-2">
+                    <div class="d-flex align-items-center">
+                        <img src="img/camas.png" alt="Camas mascota" class="cart-item-img" width="50" height="50">
+                        <div class="cart-item-details ms-2">
+                            <h6 class="cart-item-title mb-1">Camas mascota</h6>
+                            <p class="cart-item-price mb-1">$27.980 CLP</p>
+                            <div class="cart-item-quantity">
+                                <button class="btn btn-sm btn-outline-secondary">-</button>
+                                <span class="quantity"> 2 </span>
+                                <button class="btn btn-sm btn-outline-secondary">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas-footer">
+            <div class="cart-total">
+                <p>Total:</p>
+                <p class="total-price">$37.980 CLP</p>
+            </div>
+            <button class="btn btn-primary btn-checkout">Ir a pagar</button>
+        </div>
+    </div>
+</body>
+</html>
+
