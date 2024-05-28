@@ -1,0 +1,49 @@
+.offcanvas-footer {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #afafaf;
+}
+
+body {
+    padding-top: 130px
+}
+
+.text-center {
+    color: #f87828;
+    font-weight: 600;
+}
+.cart-header {
+    background-color: #ffc4a4;
+    padding: 10px;
+    border-radius: 20px;
+    color:#ffecdf
+}
+.cart-item {
+    border-bottom: 1px solid #ffc4a4;
+    padding: 10px 0;
+    text-decoration: #f87828;
+}
+.cart-summary {
+    padding: 10px;
+    background-color: #ffc4a4;
+}
+
+h5 {
+    color:#f87828;
+}
+
+.cart-summary h5 {
+    font-weight: 600;
+}
+
+.cart-summary h4 {
+    color:#f87828;
+    font-weight: 300;
+}
+
+p {
+    font-weight: 300;
+    color:#c76a30;
+}

@@ -5,31 +5,31 @@ def index(request):
     context = {
         "usuario": "",
     }
-    return render(request, "templates/pages/index.html", context)
+    return render(request, "index.html", context)
 
 def carrito(request):
     context = {
         "usuario": "",
     }
-    return render(request, "templates/pages/carrito.html", context)
+    return render(request, "carrito.html", context)
 
 def catalogo(request):
     context = {
         "usuario": "",
     }
-    return render(request, "templates/pages/catalogo.html", context)
+    return render(request, "catalogo.html", context)
 
 def contacto(request):
     context = {
         "usuario": "",
     }
-    return render(request, "templates/pages/contacto.html", context)
+    return render(request, "contacto.html", context)
 
 def pdp1(request):
     context = {
         "usuario": "",
     }
-    return render(request, "templates/pages/pdp1.html", context)
+    return render(request, "pdp1.html", context)
 
 def registro_inicio(request):
     context = {
