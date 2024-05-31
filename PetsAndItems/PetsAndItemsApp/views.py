@@ -35,13 +35,13 @@ def registro_inicio(request):
     context = {
         "usuario": "",
     }
-    return render(request, "templates/pages/registro_inicio.html", context)
+    return render(request, "registro_inicio.html", context)
 
 def ubicacion(request):
     context = {
         "usuario": "",
     }
-    return render(request, "templates/pages/ubicacion.html", context)
+    return render(request, "ubicacion.html", context)
 
 
 

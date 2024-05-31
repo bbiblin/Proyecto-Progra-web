@@ -1,0 +1,47 @@
+{% load static %}
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Carro de compras</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="cart-items">
+            <div class="cart-item border rounded p-2 mb-2">
+                <div class="d-flex align-items-center">
+                    <img src="{% static 'img/articulo 1 arnes.jpg' %}" alt="Arnes grande" class="cart-item-img" width="50" height="50">
+                    <div class="cart-item-details ms-2">
+                        <h6 class="cart-item-title mb-1">Arnes grande</h6>
+                        <p class="cart-item-price mb-1">$10.000 CLP</p>
+                        <div class="cart-item-quantity">
+                            <button class="btn btn-sm btn-outline-secondary">-</button>
+                            <span class="quantity"> 1 </span>
+                            <button class="btn btn-sm btn-outline-secondary">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-item border rounded p-2 mb-2">
+                <div class="d-flex align-items-center">
+                    <img src="{% static 'img/camas.png' %}" alt="Camas mascota" class="cart-item-img" width="50" height="50">
+                    <div class="cart-item-details ms-2">
+                        <h6 class="cart-item-title mb-1">Camas mascota</h6>
+                        <p class="cart-item-price mb-1">$27.980 CLP</p>
+                        <div class="cart-item-quantity">
+                            <button class="btn btn-sm btn-outline-secondary">-</button>
+                            <span class="quantity"> 2 </span>
+                            <button class="btn btn-sm btn-outline-secondary">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas-footer">
+        <div class="cart-total">
+            <p>Total:</p>
+            <p class="total-price">$37.980 CLP</p>
+        </div>
+        <button class="btn btn-primary btn-checkout">Ir a pagar</button>
+    </div>
+</div>
