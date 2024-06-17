@@ -43,5 +43,11 @@ def ubicacion(request):
     }
     return render(request, "ubicacion.html", context)
 
+def pag_admin(request):
+    context = {
+        "usuario": "",
+    }
+    return render(request, "pag_admin.html", context)
+
 
 
