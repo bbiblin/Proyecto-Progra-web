@@ -29,4 +29,5 @@ urlpatterns = [
     path('pdp1', views.pdp1, name='pdp1'),
     path('registro_inicio', views.registro_inicio, name='registro_inicio'),
     path('ubicacion', views.ubicacion, name='ubicacion'),
+    path('admin_pag', views.pag_admin, name='pag_admin'),
 ]
