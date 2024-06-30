@@ -1,7 +1,7 @@
 from django.db import models
 
 class Usuario(models.Model):
-    id_usuario = models.AutoField(db_column='id_usuario', primary_key=True)
+    id_usuario = models.IntegerField(db_column='id_usuario', primary_key=True)
     nombre_completo = models.CharField(db_column='nombre_completo' , max_length=50)
     correo = models.EmailField(unique=True, max_length=100, blank=False, null=False)
     contraseña = models.CharField(unique=True, max_length=100, null=False , blank=False)
