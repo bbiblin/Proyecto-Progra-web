@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Usuario
+from .models import Producto
+
 
 # Create your views here.
 def index(request):
@@ -51,6 +53,8 @@ def pag_admin(request):
     }
     return render(request, "indexx.html", context)
 
+
+#CRUD USUARIOS-------------------------------------------------------------------------------------
 def admin_add(request):
     context = {
             "usuario": "usuarios",
@@ -108,7 +112,65 @@ def admin_modificar(request):
         datos = { 'usuarios' : users }
         return render(request, "crud_Admin/admin_modificar.html", datos)
 
+#CRUD PRODUCTOS---------------------------------------------------------------------------------------
+def productos_add(request):
+    context = {
+        "usuario": "usuarios",
+    }
+    
+    if request.method == 'POST':
+        if request.POST.get('nombre_producto') and request.POST.get('descripcion') and request.POST.get('precio') and request.POST.get('stock'):
+            producto = Producto()
+            producto.nombre_producto = request.POST.get('nombre_producto')
+            producto.descripcion = request.POST.get('descripcion')
+            producto.precio = request.POST.get('precio')
+            producto.stock = request.POST.get('stock')
+            producto.save()
+            return redirect('productos_listar')    
+    else:
+        return render(request, "crud_productos/productos_add.html", context)
 
+def productos_eliminar(request):
+    context = {
+        "usuario": "",
+    }
+    if request.method == 'POST':
+        if  request.POST.get('id'):
+            id_borrar = request.POST.get('id')
+            tupla = Producto.objects.get(id_producto = id_borrar)
+            tupla.delete()
+            return redirect('productos_listar')
+    else:
+        productos = Producto.objects.all()
+        datos = { 'productos' : productos }
+        return render(request, "crud_productos/productos_eliminar.html", datos)
+
+def productos_listar(request):
+    productos = Producto.objects.all()
+    datos = { 'productos' : productos }
+    context = {
+        "usuario": "",
+    }
+    return render(request, "crud_productos/productos_listar.html", datos)
+
+def productos_modificar(request):
+    context = {
+        "usuario": "",
+    }
+    if request.method == 'POST':
+        if  request.POST.get('id_product') and request.POST.get('nombre_product') and request.POST.get('descripcion_product') and request.POST.get('precio_product')  and request.POST.get('stock_product'):
+            producto = Producto()
+            producto.id_producto = request.POST.get('id_product')
+            producto.nombre_producto = request.POST.get('nombre_product')
+            producto.descripcion = request.POST.get('descripcion_product')
+            producto.precio = request.POST.get('precio_product')
+            producto.stock = request.POST.get('stock_product')
+            producto.save()
+            return redirect('productos_listar')    
+    else:
+        productos = Producto.objects.all()
+        datos = { 'productos' : productos }
+    return render(request, "crud_productos/productos_modificar.html", datos)
 
 
 

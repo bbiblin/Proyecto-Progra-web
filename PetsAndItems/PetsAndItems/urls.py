@@ -30,11 +30,24 @@ urlpatterns = [
     path('registro_inicio', views.registro_inicio, name='registro_inicio'),
     path('ubicacion', views.ubicacion, name='ubicacion'),
     path('admin_pag', views.pag_admin, name='pag_admin'),
-    #crud
+
+    #crud usuarios
     path('admin_add', views.admin_add, name='admin_add'),
     path('admin_eliminar', views.admin_eliminar, name='admin_eliminar'),
     path('admin_listar', views.admin_listar, name='admin_listar'),
     path('admin_modificar', views.admin_modificar, name='admin_modificar'),
+
+    #crud productos
+    path('productos_add', views.productos_add, name='productos_add'),
+    path('productos_eliminar', views.productos_eliminar, name='productos_eliminar'),
+    path('productos_modificar', views.productos_modificar, name='productos_modificar'),
+    path('productos_listar', views.productos_listar, name='productos_listar'),
+
+
+
+    
+
+
 
 
 
