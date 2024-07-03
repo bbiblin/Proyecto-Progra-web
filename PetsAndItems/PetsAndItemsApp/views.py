@@ -33,6 +33,7 @@ def contacto(request):
 
 def pdp1(request, producto_id):
     producto = get_object_or_404(Producto, pk=producto_id)
+    producto.descripcion = producto.descripcion.replace('.', '.\n').replace(':', ':\n')
     context = {
         'producto': producto
     }

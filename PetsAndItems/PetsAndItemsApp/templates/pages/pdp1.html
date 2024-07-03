@@ -24,12 +24,15 @@
             <div class="col-md-6">
                 <h2 class="titulo">{{ producto.nombre_producto }}</h2>
                 <div class="descripcion-articulo">
-                    <p>{{ producto.descripcion }}</p>
+                    <ul class="descripcion-lista">
+                        {% for line in producto.descripcion.splitlines %}
+                            <li class="descripcion-item">{{ line }}</li>
+                        {% endfor %}
+                    </ul>
                 </div>
-                <h1 class="valor" style="color:#B45F2B;" class="text-md-start">${{ producto.precio }} CLP</p>
-                <div class="colores-variantes">
-                </div>
-                <div class="otros-colores">
+                <div class="precio-carro-container">
+                    <h1 class="valor" style="color:#B45F2B;" class="text-md-start">Precio: ${{ producto.precio }} CLP</h1>
+                    <button class="btn btn-primary agregar-carro">Agregar al carro</button>
                 </div>
             </div>
         </div>
