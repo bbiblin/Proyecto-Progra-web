@@ -11,79 +11,23 @@
 
     <div style="margin-top: 150px;"></div>
     <div class="container-items">
+        {% for producto in productos %}
         <div class="item" style="width: 18rem;">
             <figure>
-                <img src="{% static 'img/articulo 1 arnes.jpg' %}" alt="Cargando..." />
+                <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre_producto }}" />
             </figure>
             <div class="info-producto">
-                <h2>Arnes grande </h2>
-                <p class="precio">$10.000</p>
-                <a href="pdp1.html"><button id="boton" class="btn mb-3" type="submit">Ver Detalles</button></a>
-                <button id="boton" class="btn" type="submit" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">Añadir al carrito</button>
-            </div>
-        </div>
-        <div class="item" style="width: 18rem;">
-            <figure>
-                <img src="{% static 'img/arnes-pequeño.png' %}" alt="Cargando..." />
-            </figure>
-            <div class="info-producto">
-                <h2>Arnes pequeño</h2>
-                <p class="precio">$6.000</p>
+                <h2>{{ producto.nombre_producto }}</h2>
+                <p class="precio">${{ producto.precio }}</p>
                 <a href="#"><button id="boton" class="btn mb-3" type="submit">Ver Detalles</button></a>
                 <button id="boton" class="btn" type="submit" data-bs-toggle="modal"
                     data-bs-target="#exampleModal">Añadir al carrito</button>
             </div>
         </div>
-        <div class="item" style="width: 18rem;">
-            <figure>
-                <img src="{% static 'img/camas.png' %}" alt="Cargando..." />
-            </figure>
-            <div class="info-producto">
-                <h2>Camas mascota</h2>
-                <p class="precio">$13.990</p>
-                <a href="#"><button id="boton" class="btn mb-3" type="submit">Ver Detalles</button></a>
-                <button id="boton" class="btn" type="submit" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">Añadir al carrito</button>
-            </div>
-        </div>
-        <div class="item" style="width: 18rem;">
-            <figure>
-                <img src="{% static 'img/comedero-rosa.png' %}" alt="Cargando..." />
-            </figure>
-            <div class="info-producto">
-                <h2>Comedero rosa</h2>
-                <p class="precio">$4.000</p>
-                <a href="#"><button id="boton" class="btn mb-3" type="submit">Ver Detalles</button></a>
-                <button id="boton" class="btn" type="submit" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">Añadir al carrito</button>
-            </div>
-        </div>
-        <div class="item" style="width: 18rem;">
-            <figure>
-                <img src="{% static 'img/jardinera-perro.png' %}" alt="Cargando..." />
-            </figure>
-            <div class="info-producto">
-                <h2>Jardinera perro</h2>
-                <p class="precio">$7.990</p>
-                <a href="#"><button id="boton" class="btn mb-3" type="submit">Ver Detalles</button></a>
-                <button id="boton" class="btn" type="submit" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">Añadir al carrito</button>
-            </div>
-        </div>
-        <div class="item" style="width: 18rem;">
-            <figure>
-                <img src="{% static 'img/rascador-gato.png' %}" alt="Cargando..." />
-            </figure>
-            <div class="info-producto">
-                <h2>Rascador gato</h2>
-                <p class="precio">$4.500</p>
-                <a href="#"><button id="boton" class="btn mb-3" type="submit">Ver Detalles</button></a>
-                <button id="boton" class="btn" type="submit" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">Añadir al carrito</button>
-            </div>
-        </div>
+        {% endfor %}
     </div>
+    
+    <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">

@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+*{
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background: linear-gradient(90deg,#ffe9b8,#ffe8d6);
+}
+
+#boton{
+    outline: solid;
+    outline-width: 1px;
+    outline-color: #f87828;
+    background-color: #ff914d;
+    color: white;
+}
+
+#botonbuscar{
+    outline: solid;
+    outline-width: 1px;
+    background-color: #ffbd59;
+    color: white;
+    outline-color: #f87828 ;
+}
+
+#carta{
+    background-color: #ffc4a4;
+}
+
+.carousel-control-prev{
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(255, 189, 89, 0.401) 0%, rgba(255,255,255,0) 100%);
+}
+
+.carousel-control-next{
+    background: rgb(0,0,0);
+    background: linear-gradient(270deg, rgba(255, 189, 89, 0.4009978991596639) 0%, rgba(255,255,255,0) 100%);
+}
+
+.slide{
+    min-width: 500px;
+    max-width: 500px;
+    min-height: 500px;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+.carousel-item{
+    object-fit: cover;
+}
+
+.sobre-nosotros{
+    color: #B45F2B;
+    font-weight: 600;
+    font-style: normal;
+
+}
+
+.titulo1{
+    font-weight: 700;
+    font-style: normal;
+}
+

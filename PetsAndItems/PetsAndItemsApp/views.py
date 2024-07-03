@@ -3,7 +3,6 @@ from django.http import HttpResponse
 from .models import Usuario
 from .models import Producto
 
-
 # Create your views here.
 def index(request):
     context = {
@@ -18,10 +17,11 @@ def carrito(request):
     return render(request, "carrito.html", context)
 
 def catalogo(request):
+    productos = Producto.objects.all()
     context = {
         "usuario": "",
     }
-    return render(request, "catalogo.html", context)
+    return render(request, 'catalogo.html', {'productos': productos})
 
 def contacto(request):
     context = {
@@ -125,6 +125,7 @@ def productos_add(request):
             producto.descripcion = request.POST.get('descripcion')
             producto.precio = request.POST.get('precio')
             producto.stock = request.POST.get('stock')
+            producto.imagen = request.POST.get('imagen')
             producto.save()
             return redirect('productos_listar')    
     else:
