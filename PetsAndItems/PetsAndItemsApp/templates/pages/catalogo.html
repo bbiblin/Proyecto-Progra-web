@@ -19,7 +19,7 @@
             <div class="info-producto">
                 <h2>{{ producto.nombre_producto }}</h2>
                 <p class="precio">${{ producto.precio }}</p>
-                <a href="#"><button id="boton" class="btn mb-3" type="submit">Ver Detalles</button></a>
+                <a href="{% url 'pdp1' producto.id_producto %}"><button id="boton" class="btn mb-3" type="submit">Ver Detalles</button></a>
                 <button id="boton" class="btn" type="submit" data-bs-toggle="modal"
                     data-bs-target="#exampleModal">Añadir al carrito</button>
             </div>

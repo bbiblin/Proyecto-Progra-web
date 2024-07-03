@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import Usuario
 from .models import Producto
@@ -29,9 +29,10 @@ def contacto(request):
     }
     return render(request, "contacto.html", context)
 
-def pdp1(request):
+def pdp1(request, producto_id):
+    producto = get_object_or_404(Producto, pk=producto_id)
     context = {
-        "usuario": "",
+        'producto': producto
     }
     return render(request, "pdp1.html", context)
 

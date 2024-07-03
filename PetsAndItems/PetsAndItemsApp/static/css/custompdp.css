@@ -1,3 +1,4 @@
+
 #bottomright {
     margin: 0;
     position: absolute;
@@ -9,6 +10,8 @@
     text-decoration: underline;
 }
 .zoom{
+    width: 500px; /* Ancho fijo deseado */
+    height: 500px; /* Alto fijo deseado */
     border-radius: 50px;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
@@ -20,6 +23,7 @@
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 .valor{
+    margin-top: 100px;
     font-weight: 600;
 }
 .colores-variantes {
@@ -53,4 +57,9 @@
     margin-top: 10px;
     font-weight: bold;
     color: #B45F2B;
+}
+.img-fluid {
+    width: 500px; /* Ancho fijo deseado */
+    height: 500px; /* Alto fijo deseado */
+    object-fit: fill; /* Estirar la imagen para llenar el contenedor */
 }
