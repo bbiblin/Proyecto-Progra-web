@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from .models import Usuario
 from .models import Producto
 
+from .carro import Carro
+
 # Create your views here.
 def index(request):
     context = {
@@ -175,4 +177,41 @@ def productos_modificar(request):
     return render(request, "crud_productos/productos_modificar.html", datos)
 
 
+#carro de compras-------------------------------------------------------------------------------------
+def agregar_producto(request, producto_id):
+    
+    carro=Carro(request)
 
+    producto = Producto.objects.get(id=producto_id)
+
+    carro.agregar(producto=producto)
+
+    return redirect("catalogo")
+
+def eliminar_producto(request, producto_id):
+
+    carro=Carro(request)
+
+    producto = Producto.objects.get(id=producto_id)
+
+    carro.eliminar(producto=producto)
+
+    return redirect("carrito")
+
+def restar_producto(request, producto_id):
+
+    carro=Carro(request)
+
+    producto = Producto.objects.get(id=producto_id)
+
+    carro.restar_producto(producto=producto)
+
+    return redirect("carrito")
+
+def limpiar_carro(request):
+
+    carro=Carro(request)
+
+    carro.limpiar_carro()
+
+    return redirect("carrito")
