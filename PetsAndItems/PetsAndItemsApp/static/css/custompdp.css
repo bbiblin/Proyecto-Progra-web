@@ -10,8 +10,8 @@
     text-decoration: underline;
 }
 .zoom{
-    width: 500px; /* Ancho fijo deseado */
-    height: 500px; /* Alto fijo deseado */
+    width: 500px;
+    height: 500px;
     border-radius: 50px;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
@@ -59,7 +59,7 @@
     color: #B45F2B;
 }
 .img-fluid {
-    width: 500px; /* Ancho fijo deseado */
-    height: 500px; /* Alto fijo deseado */
-    object-fit: fill; /* Estirar la imagen para llenar el contenedor */
+    width: 500px;
+    height: 500px;
+    object-fit: fill;
 }
