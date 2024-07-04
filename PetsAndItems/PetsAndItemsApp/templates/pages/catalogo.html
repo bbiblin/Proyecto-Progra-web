@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Carrito de compra -->
+{% include 'base/carro_compra.html' %}
+
 {% load static %}
 <head>
     {% include 'base/default_head.html' %}
@@ -24,29 +27,32 @@
                     data-bs-target="#exampleModal">Añadir al carrito</button>
             </div>
         </div>
-        {% endfor %}
-    </div>
-    
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">¿Agregar al Carro?</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>¿Estás seguro que deseas agregar este producto al carrito?</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Quitar</button>
-                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Agregar</button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">¿Agregar al Carro?</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>¿Estás seguro que deseas agregar este producto al carrito?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Quitar</button>
+                        <a href="{% url 'agregar' producto.id_producto %}">
+                            <button type="button" class="btn btn-success" data-bs-dismiss="modal">Agregar</button>
+                        </a>
+                        
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Carrito de compra -->
-    {% include 'base/carro_compra.html' %}
+        {% endfor %}
+    </div>
+    
+    
 </body>
 </html>

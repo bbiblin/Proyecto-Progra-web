@@ -5,20 +5,41 @@
         <h5 class="offcanvas-title" id="offcanvasExampleLabel">Carro de compras</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <div class="offcanvas-body">
-        <div class="cart-items">
-            <div class="cart-item border rounded p-2 mb-2">
-                <div class="d-flex align-items-center">
-                    
+    {% if request.session.carro.items %}
+            {% for key, value in request.session.carro.items %}
+                <div class="offcanvas-body">
+                    <div class="cart-items">
+                        <div class="cart-item border rounded p-2 mb-2">
+                            <div class="d-flex align-items-center">
+                                <img src="img/articulo 1 arnes.jpg" alt="Arnes grande" class="cart-item-img" width="50" height="50">
+                                <div class="cart-item-details ms-2">
+                                    <h6 class="cart-item-title mb-1">{{value.nombre_producto}}</h6>
+                                    <p class="cart-item-price mb-1">${{value.precio}} CLP</p>
+                                    <div class="cart-item-quantity">
+                                        <a href="{% url 'restar' value.producto_id %}">
+                                            <button class="btn btn-sm btn-outline-secondary" >-</button>
+                                        </a>
+                                        <span class="quantity"> {{value.cantidad}} </span>
+                                        <a href="{% url 'agregar' value.producto_id %}">
+                                            <button class="btn btn-sm btn-outline-secondary">+</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="cart-item border rounded p-2 mb-2">
-                <div class="d-flex align-items-center">
-                    
+            {% endfor %}
+    {% else %}
+        <tr>
+            <td colspan="3">
+                <div class="alert alert-danger text-center">
+
+                    Sin productos
                 </div>
-            </div>
-        </div>
-    </div>
+            </td>
+        </tr>
+    {% endif %}
 
     <div class="offcanvas-footer">
         <div class="cart-total">

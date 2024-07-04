@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import Usuario
 from .models import Producto
-
 from .carro import Carro
 
 # Create your views here.
@@ -179,11 +178,12 @@ def productos_modificar(request):
 
 
 #carro de compras-------------------------------------------------------------------------------------
+
 def agregar_producto(request, producto_id):
     
     carro=Carro(request)
 
-    producto = Producto.objects.get(id=producto_id)
+    producto = Producto.objects.get(id_producto=producto_id)
 
     carro.agregar(producto=producto)
 
@@ -197,17 +197,17 @@ def eliminar_producto(request, producto_id):
 
     carro.eliminar(producto=producto)
 
-    return redirect("carrito")
+    return redirect("catalogo")
 
 def restar_producto(request, producto_id):
 
     carro=Carro(request)
 
-    producto = Producto.objects.get(id=producto_id)
+    producto = Producto.objects.get(id_producto=producto_id)
 
     carro.restar_producto(producto=producto)
 
-    return redirect("carrito")
+    return redirect("catalogo")
 
 def limpiar_carro(request):
 
@@ -215,4 +215,4 @@ def limpiar_carro(request):
 
     carro.limpiar_carro()
 
-    return redirect("carrito")
+    return redirect("catalogo")
