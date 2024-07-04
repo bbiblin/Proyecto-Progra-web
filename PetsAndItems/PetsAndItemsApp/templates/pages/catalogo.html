@@ -22,18 +22,17 @@
             <div class="info-producto">
                 <h2>{{ producto.nombre_producto }}</h2>
                 <p class="precio">${{ producto.precio }}</p>
-                <a href="{% url 'pdp1' producto.id_producto %}"><button id="boton" class="btn mb-3" type="submit">Ver Detalles</button></a>
-                <button id="boton" class="btn" type="submit" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">Añadir al carrito</button>
+                <a href="{% url 'pdp1' producto.id_producto %}"><button class="btn btn-producto" type="submit">Ver Detalles</button></a>
+                <button id="boton{{ forloop.counter }}" class="btn btn-producto" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal{{ forloop.counter }}">Añadir al carrito</button>
             </div>
         </div>
 
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="exampleModal{{ forloop.counter }}" tabindex="-1" aria-labelledby="exampleModalLabel{{ forloop.counter }}" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">¿Agregar al Carro?</h1>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel{{ forloop.counter }}">¿Agregar al Carro?</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -44,15 +43,11 @@
                         <a href="{% url 'agregar' producto.id_producto %}">
                             <button type="button" class="btn btn-success" data-bs-dismiss="modal">Agregar</button>
                         </a>
-                        
                     </div>
                 </div>
             </div>
         </div>
-
         {% endfor %}
     </div>
-    
-    
 </body>
 </html>

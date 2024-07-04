@@ -35,7 +35,6 @@
                     </label>
                     <label>
                         <i class='bx bx-lock-alt' ></i>
-                        <!--<input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>-->
                         <input id="pass" type="password" placeholder="Contraseña">
                     </label>
                     <input onclick="validarCrearCuenta()" type="submit" value="Registrarse">
@@ -78,8 +77,8 @@
                     <input type="submit" value="Iniciar sesión">
 
                     <div class="form-group mx-auto botones">
-                        <input type="reset" value="Limpiar" class="btn btn-outline-warning btn-l">
-                        <button type="button" onclick="validarInicioSesion()" class="btn btn-outline-warning btn-l">Validar</button>
+                        <input type="reset" value="Limpiar">
+                        <button type="button" onclick="validarInicioSesion()">Validar</button>
                     </div>
                     <div id="resultadoInicio"></div>
                 </form>

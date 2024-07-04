@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Usuario, Producto, Carrito, metodoPago, Orden, detalleOrden
+from .models import Usuario, Producto, Carrito, metodoPago, Orden, detalleOrden, Contacto
 
 # Register your models here.
 @admin.register(Producto)
@@ -19,3 +19,4 @@ admin.site.register(Carrito)
 admin.site.register(metodoPago)
 admin.site.register(Orden)
 admin.site.register(detalleOrden)
+admin.site.register(Contacto)

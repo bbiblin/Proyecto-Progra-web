@@ -1,3 +1,27 @@
+#botonAgregar {
+    background-color: #ff9736;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-left: 20px; 
+    display: inline-block; 
+}
+#botonAgregar:hover {
+    background-color: #FFA500; /* Naranja más claro al pasar el mouse */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+#botonAgregar:active {
+    background-color: #FF7F50; /* Coral al hacer clic */
+    transform: translateY(1px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
 .titulo{
     color: #663100;
     margin-bottom: 10%;
@@ -9,14 +33,11 @@
     position: relative;
     border-radius: 50px;
 }
-
 .zoom img {
     display: block;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
     border-radius: 50px;
 }
-
-
 .descripcion-articulo{
     background-color: #FFF5E6;
     padding: 20px;
@@ -28,9 +49,9 @@
     font-weight: 600;
 }
 .img-fluid {
-    width: 600px;
-    height: 600px;
-    object-fit: fill;
+    width: 600px !important;
+    height: 600px !important;
+    object-fit: fill !important;
 }
 .descripcion-lista {
     list-style-type: disc;
@@ -62,11 +83,9 @@
     cursor: pointer; 
     transition: background-color 0.3s ease; 
 }
-
 .agregar-carro:hover {
     background-color: #FFD700 !important;
 }
-
 .agregar-carro:active {
     background-color: #FF6347 !important;
 }

@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from .models import Usuario
 from .models import Producto
 from .carro import Carro
+from .models import Contacto
+from django.utils import timezone
 
 # Create your views here.
 def index(request):
@@ -116,6 +118,7 @@ def admin_modificar(request):
         return render(request, "crud_Admin/admin_modificar.html", datos)
 
 #CRUD PRODUCTOS---------------------------------------------------------------------------------------
+
 def productos_add(request):
     context = {
         "usuario": "usuarios",
@@ -180,33 +183,21 @@ def productos_modificar(request):
 #carro de compras-------------------------------------------------------------------------------------
 
 def agregar_producto(request, producto_id):
-    
-    carro=Carro(request)
-
-    producto = Producto.objects.get(id_producto=producto_id)
-
+    carro = Carro(request)
+    producto = Producto.objects.get(id_producto=producto_id)  # Cambiado de 'id' a 'id_producto'
     carro.agregar(producto=producto)
-
     return redirect("catalogo")
 
 def eliminar_producto(request, producto_id):
-
-    carro=Carro(request)
-
-    producto = Producto.objects.get(id=producto_id)
-
+    carro = Carro(request)
+    producto = Producto.objects.get(id_producto=producto_id)  # Cambiado de 'id' a 'id_producto'
     carro.eliminar(producto=producto)
-
     return redirect("catalogo")
 
 def restar_producto(request, producto_id):
-
-    carro=Carro(request)
-
-    producto = Producto.objects.get(id_producto=producto_id)
-
+    carro = Carro(request)
+    producto = Producto.objects.get(id_producto=producto_id)  # Cambiado de 'id' a 'id_producto'
     carro.restar_producto(producto=producto)
-
     return redirect("catalogo")
 
 def limpiar_carro(request):
@@ -216,3 +207,17 @@ def limpiar_carro(request):
     carro.limpiar_carro()
 
     return redirect("catalogo")
+
+#contacto---------------------------------------------------------------------------------------------
+
+
+def guardar_mensaje(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        mensaje = request.POST.get('mensaje')
+        contacto = Contacto(email=email, mensaje=mensaje, fecha_envio=timezone.now())
+        contacto.save()
+        return redirect('contacto') 
+
+    return render(request, 'contacto.html')  
+

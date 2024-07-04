@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
 <head>
     {% include 'base/default_head.html' %}
     <link rel="stylesheet" href="{% static 'css/custompdp.css' %}">
@@ -18,9 +16,9 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="zoom">
-                <img class="img-fluid" img src="{{ producto.imagen.url }}" alt="{{ producto.nombre_producto }}">
+                    <img class="img-fluid" src="{{ producto.imagen.url }}" alt="{{ producto.nombre_producto }}">
+                </div>
             </div>
-        </div>
             <div class="col-md-6">
                 <h2 class="titulo">{{ producto.nombre_producto }}</h2>
                 <div class="descripcion-articulo">
@@ -31,16 +29,35 @@
                     </ul>
                 </div>
                 <div class="precio-carro-container">
-                    <h1 class="valor" style="color:#B45F2B;" class="text-md-start">Precio: ${{ producto.precio }} CLP</h1>
-                    <button class="btn btn-primary agregar-carro">Agregar al carro</button>
+                    <h1 class="valor" style="color:#B45F2B;">Precio: ${{ producto.precio }} CLP</h1>
+                    <button id="botonAgregar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Agregar al carro</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="bottomright">
-        
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">¿Agregar al Carro?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Estás seguro que deseas agregar este producto al carrito?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Quitar</button>
+                    <a href="{% url 'agregar' producto.id_producto %}">
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Agregar</button>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <div id="bottomright"></div>
     {% include 'base/carro_compra.html' %}
 
     <script>

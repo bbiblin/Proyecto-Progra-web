@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
+    {% load static %}
 <head>
     {% include 'base/default_head.html' %}
+    <link rel="stylesheet" href="{% static 'css/customcontacto.css' %}">
 </head>
 
 <body>
@@ -11,23 +12,19 @@
     <div style="margin-top: 150px;"></div>
     <div class="container">
         <div class="row">
-            <form action="" method="POST" class="col-lg-4 mx-auto shadow-lg text-center mt-3 p-5">
+            <form action="{% url 'guardar_mensaje' %}" method="POST" class="col-lg-4 mx-auto shadow-lg rounded-5 text-center mt-3 mb-4 p-5 custom-background">
                 {% csrf_token %}
                 <h3>Contacto</h3>
                 <div class="form-floating mx-auto mb-2">
-                    <input type="text" class="form-control" name="email" id="email" placeholder="Ingrese correo electronico" required>
-                    <label for="username">Email</label>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Ingrese correo electrónico" required>
+                    <label for="email">Email</label>
                 </div>
                 <div class="form-floating mx-auto mb-2">
-                    <textarea class="form-control" name="mensaje" id="mensaje" placeholder="Ingrese su ticket">
-
-                    </textarea>
+                    <textarea class="form-control" name="mensaje" id="mensaje" placeholder="Ingrese su mensaje" required></textarea>
                     <label for="mensaje">Mensaje</label>
                 </div>
-                <div id="resultado">
-                </div>
                 <div class="form-group mx-auto">
-                    <input type="submit" value="Ingresar" class="btn btn-outline-primary" onclick="validarcorreo()">
+                    <input type="submit" value="Enviar" class="btn btn-outline-primary">
                     <input type="reset" value="Limpiar" class="btn btn-outline-warning">
                 </div>
             </form>
