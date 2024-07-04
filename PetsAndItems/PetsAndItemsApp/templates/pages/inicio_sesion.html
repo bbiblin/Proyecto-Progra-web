@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    {% include 'base/default_head.html' %}
+    
+    <link rel="stylesheet" href="{% static 'css/custom-registro-inicio.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="{% static 'js/validaciones.js' %}"></script>
+</head>
+<body>
+    {% include 'base/navbar.html' %}
+    <div class="container-form login hide" >
+        <div class="information">
+            <div class="info-childs">
+                <h2>Bienvenido/a nuevamente</h2>
+                <p>Inicia sesion con tu cuenta, si no tienes una, registrate</p>
+                <a href="{% url 'registro_inicio' %}"><button id="boton" class="btn ms-3"
+                    type="submit">Registrate</button></a>
+            </div>
+        </div>
+        <div class="form-information">
+            <div class="form-information-childs">
+                <h2>Iniciar sesión</h2>
+                <form class="form">
+                    <label>
+                        <i class='bx bx-envelope' ></i>
+                        <input id="emailInicioSesion" type="email" placeholder="Correo electronico">
+                    </label>
+                    <label>
+                        <i class='bx bx-lock-alt' ></i>
+                        <input id="passInicioSesion" type="password" placeholder="Contraseña">
+                    </label>
+                    <input type="submit" value="Iniciar sesión">
+
+                    <div class="form-group mx-auto botones">
+                        <input type="reset" value="Limpiar" class="btn btn-outline-warning btn-l">
+                        <button type="button" onclick="validarInicioSesion()" class="btn btn-outline-warning btn-l">Validar</button>
+                    </div>
+                    <div id="resultadoInicio"></div>
+                </form>
+            </div>
+        </div>
+        
+    <!-- Carrito de compra -->
+    {% include 'base/carro_compra.html' %}
+
+<script src="js/validaciones.js"></script>
+</body>
+</html>

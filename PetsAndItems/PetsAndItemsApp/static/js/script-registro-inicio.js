@@ -1,4 +1,4 @@
-const btnInicioSesion = document.getElementById("iniciosesion"),
+/*const btnInicioSesion = document.getElementById("iniciosesion"),
       btnRegistro = document.getElementById("registro"),
       formRegister = document.querySelector(".register"),
       formLogin = document.querySelector(".login");
@@ -11,4 +11,4 @@ btnInicioSesion.addEventListener("click", e => {
 btnRegistro.addEventListener("click", e => {
     formLogin.classList.add("hide");
     formRegister.classList.remove("hide");
-})
+})*/

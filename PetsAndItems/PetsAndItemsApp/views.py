@@ -46,6 +46,12 @@ def registro_inicio(request):
     }
     return render(request, "registro_inicio.html", context)
 
+def iniciosesion(request):
+    context = {
+        "usuario": "",
+    }
+    return render(request, "inicio_sesion.html", context)
+
 def ubicacion(request):
     context = {
         "usuario": "",

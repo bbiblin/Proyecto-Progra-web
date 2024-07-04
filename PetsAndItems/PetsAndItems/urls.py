@@ -30,6 +30,8 @@ urlpatterns = [
     path('contacto', views.contacto, name='contacto'),
     path('pdp1/<int:producto_id>/', views.pdp1, name='pdp1'),
     path('registro_inicio', views.registro_inicio, name='registro_inicio'),
+    path('inicio_sesion', views.iniciosesion, name='inicio_sesion'),
+
     path('ubicacion', views.ubicacion, name='ubicacion'),
     path('admin_pag', views.pag_admin, name='pag_admin'),
 
