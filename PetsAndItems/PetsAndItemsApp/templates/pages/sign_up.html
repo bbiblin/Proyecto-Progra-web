@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+<head>
+    {% include 'base/default_head.html' %}
+    
+    <link rel="stylesheet" href="{% static 'css/custom-registro-inicio.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    {% include 'base/navbar.html' %}
+    
+    <div style="
+    background-color: #ffc4a4;
+    box-shadow: 0 5px 7px rgba(0, 0, 0, .1);
+    border-radius: 20px;
+    display: flex;
+    height: auto;
+    max-width: 900px;
+    transition: all 1s ease;
+    margin: 10px;">
+
+        <form class="m-3" method="post" action="">
+
+            {% csrf_token %}
+    
+            {{form|crispy}}
+            
+            <button type="submit" id="boton" class="btn ms-3 mt-3"> Registrarse</button>
+
+        </form>
+
+    </div>
+
+    <!-- Carrito de compra -->
+    {% include 'base/carro_compra.html' %}
+
+
+</body>
+</html>

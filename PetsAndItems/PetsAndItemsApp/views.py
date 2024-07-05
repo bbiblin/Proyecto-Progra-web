@@ -5,6 +5,7 @@ from .models import Producto
 from .carro import Carro
 from .models import Contacto
 from django.utils import timezone
+from django.views.generic import View
 
 # Create your views here.
 def index(request):
@@ -227,3 +228,57 @@ def guardar_mensaje(request):
 
     return render(request, 'contacto.html')  
 
+
+#AUTENTICACION----------------------------------------------------------------------------------------
+
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth import login, logout, authenticate
+from django.contrib import messages
+
+class VRegistro(View):
+
+    def get(self, request):
+        form=UserCreationForm()
+        return render(request,"sign_up.html",{"form":form})
+
+    def post(self, request):
+        form=UserCreationForm(request.POST)
+
+        if form.is_valid():
+
+            usuario=form.save()
+
+            login(request, usuario)
+
+            return redirect('index')
+
+        else:
+            for msg in form.error_messages:
+                messages.error(request, form.error_messages[msg])
+
+            return render(request,"sign_up.html",{"form":form})
+
+
+def cerrar_sesion(request):
+    logout(request)
+
+    return redirect('index')
+
+
+def inicio_sesion(request):
+    if request.method=="POST":
+        form=AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            nombre_usuario=form.cleaned_data.get("username")
+            contra=form.cleaned_data.get("password")
+            usuario=authenticate(username=nombre_usuario, password=contra)
+            if usuario is not None:
+                login(request, usuario)
+                return redirect('index')
+            else:
+                messages.error(request, "usuario no válido")
+        else:
+            messages.error(request, "información incorrecta")
+
+    form=AuthenticationForm()
+    return render(request,"login.html",{"form":form})

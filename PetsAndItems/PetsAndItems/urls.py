@@ -19,6 +19,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
+from PetsAndItemsApp.views import VRegistro
 
 from PetsAndItemsApp import views
 
@@ -55,6 +56,12 @@ urlpatterns = [
 
     #contacto
     path('guardar-mensaje/', views.guardar_mensaje, name='guardar_mensaje'),
+
+    #autenticacion de usuarios
+    path('sign_up', VRegistro.as_view(), name='sign_up'),
+    path('logout', views.cerrar_sesion, name='cerrar_sesion'),
+    path('login', views.inicio_sesion, name='login'),
+
 ]
 
 if settings.DEBUG:
