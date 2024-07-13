@@ -68,19 +68,19 @@ def pag_admin(request):
 
 #CRUD USUARIOS-------------------------------------------------------------------------------------
 def admin_add(request):
-    context = {
-            "usuario": "usuarios",
-            }
     if request.method == 'POST':
-        if request.POST.get('nombre_completo') and request.POST.get('correo') and request.POST.get('contraseña'):
-            user = Usuario()
-            user.nombre_completo = request.POST.get('nombre_completo')
-            user.correo = request.POST.get('correo')
-            user.contraseña = request.POST.get('contraseña')
+        nombre_completo = request.POST.get('nombre_completo')
+        correo = request.POST.get('correo')
+        contraseña = request.POST.get('contraseña')
+
+        if nombre_completo and correo and contraseña:
+            user = Usuario(nombre_completo=nombre_completo, correo=correo, contraseña=contraseña)
             user.save()
-            return redirect('admin_listar')    
-    else:
-        return render(request, "crud_Admin/admin_add.html", context)
+            return redirect('admin_listar')  # Redirige a la lista de usuarios después de guardar
+        else:
+            messages.error(request, "Por favor, completa todos los campos.")
+    
+    return render(request, "crud_Admin/admin_add.html")
 
 
 def admin_eliminar(request):

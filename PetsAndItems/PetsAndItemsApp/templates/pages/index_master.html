@@ -54,7 +54,6 @@
                   <li><a href="{% url 'pag_admin' %}"><i class="fa fa-home"></i> Home</a>
                   </li>
 
-                  
                     <li><a><i class="fa fa-shopping-cart"></i> Productos <span class="fa fa-chevron-down"></span></a>
                       <ul class="nav child_menu">
                         <li><a href="{% url 'productos_listar'%}"><i class="fa fa-list"></i>Listar</a></li>
@@ -63,6 +62,15 @@
                         <li><a href="{% url 'productos_eliminar'%}"><i class="fa fa-times"></i>Eliminar</a></li>
   
                       </ul>
+
+                      <li><a><i class="fa fa-shopping-cart"></i> Usuarios <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                          <li><a href="{% url 'admin_listar'%}"><i class="fa fa-list"></i>Listar</a></li>
+                          <li><a href="{% url 'admin_add'%}"><i class="fa fa-plus"></i>Agregar</a></li>
+                          <li><a href="{% url 'admin_modificar'%}"><i class="fa fa-edit"></i>Modificar</a></li>
+                          <li><a href="{% url 'admin_eliminar'%}"><i class="fa fa-times"></i>Eliminar</a></li>
+    
+                        </ul>
                   </li>
                 </ul>
               </div>
