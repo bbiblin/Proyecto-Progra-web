@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 class Usuario(models.Model):
      #MODIFICAR ESTO PARA AJUSTARLO AL USER DE DJANGO
@@ -37,13 +38,15 @@ class metodoPago(models.Model):
           return str(self.nombre)
 
 class Orden(models.Model):
-     id_orden = models.AutoField(db_column='id_orden', primary_key=True)
-     id_usuario = models.ForeignKey('Usuario',on_delete=models.CASCADE, db_column='id_usuario')
-     id_metodo_pago = models.ForeignKey('metodoPago',on_delete=models.CASCADE, db_column='id_metodo_pago')
-     total = models.IntegerField(db_column='total', null=False ,blank=False)
+    id_orden = models.AutoField(db_column='id_orden', primary_key=True)
+    usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    id_metodo_pago = models.ForeignKey(metodoPago, on_delete=models.CASCADE)
+    total = models.DecimalField(max_digits=10, decimal_places=2)
+    estado = models.CharField(max_length=20, default='Pendiente')  # Nuevo campo
+    fecha_creacion = models.DateTimeField(auto_now_add=True)  # Nuevo campo
 
-     def __str__(self):
-          return str(self.id_orden)
+    def __str__(self):
+        return str(self.id_orden)
 
 
 class detalleOrden(models.Model):

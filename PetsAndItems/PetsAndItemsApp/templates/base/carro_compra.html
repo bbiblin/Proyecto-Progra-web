@@ -44,7 +44,10 @@
             <span>Total:</span>
             <span class="total-price">${{importe_total_carro}} CLP</span>
         </div>
-        <button class="btn btn-primary btn-lg btn-block">Ir a pagar</button>
+        <form action="{% url 'procesar_pago' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Ir a pagar</button>
+        </form>
         <form action="{% url 'limpiar' %}" method="post">
             {% csrf_token %}
             <button type="submit" class="btn btn-danger btn-lg btn-block mt-3">Vaciar carrito</button>
