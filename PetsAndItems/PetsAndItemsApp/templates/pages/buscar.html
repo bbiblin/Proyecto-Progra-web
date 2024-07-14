@@ -1,20 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Carrito de compra -->
-{% include 'base/carro_compra.html' %}
+    {% include 'base/carro_compra.html' %}
 
-{% load static %}
+    {% load static %}
 <head>
     {% include 'base/default_head.html' %}
     <link rel="stylesheet" href="{% static 'css/customcatalogo.css' %}">
-</head>
 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar</title>
+</head>
 <body>
-    {% include 'base/navbar.html' %} 
+    {% include 'base/navbar.html' %}
 
     <div style="margin-top: 150px;"></div>
+    <div class="card">
+        <h1 style="text-align: center; background-color: #ffe8d6; color: coral;"  >Búsqueda de productos</h1>
+
+        <div class="card-body" id="carta">
+          <form method="POST" action="{% url 'buscar' %}">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <input type="text" class="form-control"  placeholder="Busca un producto" name="buscado" style="width: 500px;">
+            </div>
+            <button type="submit" class="btn btn-danger" id="botonbuscar"> Buscar </button>
+          </form>
+        </div>
+      </div>
+
+      {% if buscado %}
+      
     <div class="container-items">
-        {% for producto in productos %}
+        {% for producto in buscado %}
         <div class="item" style="width: 18rem;">
             <figure>
                 <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre_producto }}" />
@@ -47,11 +66,8 @@
                 </div>
             </div>
         </div>
-        {% endfor %}
-    </div>
+      {%  endfor %}
+      {%  endif %}
 
-    <div class="form-group mx-auto botones">
-        <a href="{% url 'pag_admin' %}">
-            <button type="button" class="btn ms-3 mt-3">Panel de administracion</button>
 </body>
 </html>

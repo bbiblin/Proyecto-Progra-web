@@ -65,6 +65,20 @@ def pag_admin(request):
     }
     return render(request, "indexx.html", context)
 
+def pag_buscar(request):
+    if request.method == "POST":
+        buscado = request.POST['buscado']  # Obtener el valor del campo 'buscado' del formulario POST
+        buscado = Producto.objects.filter(nombre_producto__icontains=buscado)
+
+        if not buscado:
+            messages.success(request, "No encontramos ese producto...")
+            return render(request, "buscar.html", {'buscado':buscado})
+        else:
+            return render(request, "buscar.html", {'buscado':buscado})
+    else:
+        return render(request, "buscar.html")
+
+
 
 #CRUD USUARIOS-------------------------------------------------------------------------------------
 def admin_add(request):

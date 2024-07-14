@@ -20,16 +20,8 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarTogglerDemo01">
             <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
-                <div class="ms-0 mt-3 mb-3">
-                    <li class="nav-item">
-                        <form class="d-flex ps-0">
-                            <input class="form-control" type="search">
-                            <div class="ps-3">
-                                <button id="botonbuscar" class="btn" type="submit">Buscar</button>
-                            </div>
-                        </form>
-                    </li>
-                </div>
+
+                
                 <div class="ms-0 mt-3 mb-3">
                     <li class="nav-item">
                         <a href="{% url 'index' %}"><button id="boton" class="btn ms-3"
@@ -60,6 +52,10 @@
             <ul class="navbar-nav ms-auto flex-row">
                 <div class="ms-0 mt-3 mb-3">
                     <li>
+                            <li class="nav-item">
+                                <a href="{% url 'buscar' %}"><button id="botonbuscar" class="btn ms-3"
+                                        type="submit">Buscar</button></a>
+
                         {% if user.is_authenticated %}
                         <a href="{% url 'cerrar_sesion' %}" class="btn ms-3" style="color: #ff914d;">
                             Cerrar Sesion
@@ -82,5 +78,5 @@
                 </div>
             </ul>
         </div>
-    </div>
+
 </nav>

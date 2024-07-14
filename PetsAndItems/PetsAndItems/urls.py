@@ -62,6 +62,11 @@ urlpatterns = [
     path('logout', views.cerrar_sesion, name='cerrar_sesion'),
     path('login', views.inicio_sesion, name='login'),
 
+    path('buscar', views.pag_buscar, name='buscar'),
+
+
+
+
 ]
 
 if settings.DEBUG:

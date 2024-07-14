@@ -9,6 +9,7 @@ body{
 }
 
 #boton{
+    
     outline: solid;
     outline-width: 1px;
     outline-color: #f87828;
@@ -17,6 +18,7 @@ body{
 }
 
 #botonbuscar{
+    align-items: end;
     outline: solid;
     outline-width: 1px;
     background-color: #ffbd59;
