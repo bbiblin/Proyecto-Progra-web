@@ -94,7 +94,7 @@ def pag_buscar(request):
 
 
 #CRUD USUARIOS-------------------------------------------------------------------------------------
-
+@user_passes_test(lambda u: u.is_superuser)
 @login_required
 def admin_add(request):
     if request.method == 'POST':
@@ -111,6 +111,7 @@ def admin_add(request):
     
     return render(request, "crud_Admin/admin_add.html")
 
+@user_passes_test(lambda u: u.is_superuser)
 @login_required
 def admin_eliminar(request):
     context = {
@@ -127,6 +128,7 @@ def admin_eliminar(request):
         datos = { 'usuarios' : users }
         return render(request, "crud_Admin/admin_eliminar.html", datos)
 
+@user_passes_test(lambda u: u.is_superuser)
 @login_required
 def admin_listar(request):
     users = Usuario.objects.all()
@@ -136,6 +138,7 @@ def admin_listar(request):
     }
     return render(request, "crud_Admin/admin_listar.html", datos)
 
+@user_passes_test(lambda u: u.is_superuser)
 @login_required
 def admin_modificar(request):
     context = {
@@ -156,7 +159,7 @@ def admin_modificar(request):
         return render(request, "crud_Admin/admin_modificar.html", datos)
 
 #CRUD PRODUCTOS---------------------------------------------------------------------------------------
-
+@user_passes_test(lambda u: u.is_superuser)
 @login_required
 def productos_add(request):
     context = {
@@ -176,6 +179,7 @@ def productos_add(request):
     else:
         return render(request, "crud_productos/productos_add.html", context)
 
+@user_passes_test(lambda u: u.is_superuser)
 @login_required
 def productos_eliminar(request):
     context = {
@@ -191,7 +195,8 @@ def productos_eliminar(request):
         productos = Producto.objects.all()
         datos = { 'productos' : productos }
         return render(request, "crud_productos/productos_eliminar.html", datos)
-
+        
+@user_passes_test(lambda u: u.is_superuser)
 @login_required
 def productos_listar(request):
     productos = Producto.objects.all()
@@ -200,7 +205,8 @@ def productos_listar(request):
         "usuario": "",
     }
     return render(request, "crud_productos/productos_listar.html", datos)
-
+    
+@user_passes_test(lambda u: u.is_superuser)
 @login_required
 def productos_modificar(request):
     context = {
