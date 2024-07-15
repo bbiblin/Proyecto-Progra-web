@@ -10,6 +10,7 @@ from django.contrib.auth.decorators import login_required
 from decimal import Decimal
 from django.db import transaction
 from django.contrib.auth import get_user_model
+from django.contrib.auth.decorators import user_passes_test
 from .models import metodoPago, Orden, Producto, detalleOrden
 from django.contrib import messages
 
@@ -69,6 +70,7 @@ def ubicacion(request):
     }
     return render(request, "ubicacion.html", context)
 
+@user_passes_test(lambda u: u.is_superuser)
 @login_required
 def pag_admin(request):
     context = {
@@ -313,9 +315,9 @@ def inicio_sesion(request):
                 login(request, usuario)
                 return redirect('index')
             else:
-                messages.error(request, "Usuario no válido")
+                messages.error(request, "LOGIN: Usuario no válido")
         else:
-            messages.error(request, "Información incorrecta")
+            messages.error(request, "LOGIN: Información incorrecta")
     else:
         form = AuthenticationForm()
     return render(request, "login.html", {"form": form})
@@ -355,7 +357,7 @@ def procesar_pago(request):
                 for key, item in carro.items():
                     producto = Producto.objects.get(id_producto=key)
                     if producto.stock < int(item['cantidad']):
-                        raise ValueError(f"Stock insuficiente para el producto {producto.nombre}")
+                        raise ValueError(f"Stock insuficiente para el producto {producto.nombre_producto}")
                     
                     detalleOrden.objects.create(
                         id_orden=orden,

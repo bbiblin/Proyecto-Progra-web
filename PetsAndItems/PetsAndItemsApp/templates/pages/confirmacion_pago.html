@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static %}
 <head>
+    {% include 'base/default_head.html' %}
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
 <body>
-    <div class="container">
-        <h2>¡Gracias por tu compra!</h2>
-        <p>Tu orden #{{ orden.id_orden }} ha sido procesada correctamente.</p>
-        <p>Total: ${{ orden.total }} CLP</p>
-        <p>Estado: {{ orden.estado }}</p>
+    {% include 'base/navbar.html' %} 
+    <div style="margin-top: 150px;"></div>
+
+    <div class="container" style="background-color: #ffd391; border-radius: 30px; padding: 20px;">
+        <h2 style="color:#ff914d">¡Gracias por tu compra!</h2>
+        <p style="color: #B45F2B; font-weight: 600;">Tu orden #{{ orden.id_orden }} ha sido procesada correctamente.</p>
+        <p style="color: #B45F2B;font-weight: 600;"> Total {{ orden.total }} CLP</p>
+        <p style="color: #B45F2B;font-weight: 600;">Estado: {{ orden.estado }}</p>
         <a href="{% url 'index' %}" class="btn btn-primary">Volver a la tienda</a>
     </div>
-</body>
+</body
 </html>
 
