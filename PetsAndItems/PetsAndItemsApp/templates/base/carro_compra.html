@@ -33,6 +33,13 @@
                     </div>
                 {% endfor %}
             </div>
+            {% if messages %}
+                {% for mensaje in messages %}
+                    <div class="modal-body {{mensaje.tags}}">
+                        <p>{{mensaje}}</p>
+                    </div>
+                {% endfor %}
+            {% endif %}
         {% else %}
             <div class="alert alert-info text-center">
                 Tu carrito está vacío
@@ -44,15 +51,17 @@
             <span>Total:</span>
             <span class="total-price">${{importe_total_carro}} CLP</span>
         </div>
-        <form action="{% url 'procesar_pago' %}" method="post">
-            {% csrf_token %}
-            <button type="submit" class="btn btn-primary btn-lg btn-block">Ir a pagar</button>
-        </form>
-        <form action="{% url 'limpiar' %}" method="post">
-            {% csrf_token %}
-            <button type="submit" class="btn btn-danger btn-lg btn-block mt-3">Vaciar carrito</button>
-        </form>
-    </div>
+        <div>
+            <form action="{% url 'procesar_pago' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Ir a pagar</button>
+            </form>
+            <form action="{% url 'limpiar' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger btn-lg btn-block mt-3">Vaciar carrito</button>
+            </form>
+        </div>
+    </div>   
 </div>
 {% else %}
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
@@ -60,12 +69,10 @@
         <h5 class="offcanvas-title" id="offcanvasExampleLabel">Carro de compras</h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <div class="offcanvas-body">
-        
+    <div class="offcanvas-body">  
         <div class="alert alert-info text-center">
             Debes iniciar sesión para ver tu carro
         </div>
-        
     </div>
 </div>
 {% endif %}
@@ -91,3 +98,4 @@
 
 </body>
 </html>
+

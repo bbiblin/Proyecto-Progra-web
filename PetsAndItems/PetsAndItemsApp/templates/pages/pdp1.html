@@ -30,8 +30,14 @@
                 </div>
                 <div class="precio-carro-container">
                     <h1 class="valor" style="color:#B45F2B;">Precio: ${{ producto.precio }} CLP</h1>
+                </div>
+                <div class="precio-carro-container">
+                    <h1 class="valor" style="color:#B45F2B;">Stock: {{ producto.stock }}</h1>
+                </div>
+                <div style="padding-top: 50px;">
                     <button id="botonAgregar" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Agregar al carro</button>
                 </div>
+
             </div>
         </div>
     </div>
